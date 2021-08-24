@@ -51,7 +51,7 @@ const sideLink = [
 const Sidebar = () => {
   const [active, setActive] = useState("Home");
   const handleMenuItemClick = (name) => {
-    setActive(name); 
+    setActive(name);
   };
   return (
     <div className="h-screen sticky top-0 flex flex-col justify-between px-2 w-72 ">
@@ -61,8 +61,14 @@ const Sidebar = () => {
         </div>
         <nav className="mb-4">
           <ul>
-            {sideLink.map( ({ name, icon}) => (
-              <SideLink key = {name} name = {name} Icon = {icon} active = {active} onMenuItemClick={handleMenuItemClick}/>
+            {sideLink.map(({ name, icon }) => (
+              <SideLink
+                key={name}
+                name={name}
+                Icon={icon}
+                active={active}
+                onMenuItemClick={handleMenuItemClick}
+              />
             ))}
           </ul>
         </nav>
@@ -70,7 +76,7 @@ const Sidebar = () => {
           Tweet
         </button>
       </div>
-      <UserBox/>
+      <UserBox />
     </div>
   );
 };
